@@ -27,13 +27,13 @@ const App = () => {
   //   // This is stretch. Prevent the same movie from being "saved" more than once
   // };
 
-  return (
+  return (  
     <div>
       <SavedList list={[ /* This is stretch */]} />
       <Route path = '/movies/:id'>
-        <Movie item={movieList} movie={movieList}/>
+        <Movie item={movieList} movies={movieList}/>
       </Route>
-      <Route path = '/'>
+      <Route exact path = '/'>
         <MovieList item={movieList} movies={movieList}/>
       </Route>
     </div>
