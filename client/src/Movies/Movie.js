@@ -4,8 +4,8 @@ import { useRouteMatch } from 'react-router-dom';
 
 const Movie = (props) => {
   const [movie, setMovie] = useState();
-  const { param } = useRouteMatch();
-  
+  const param  = useRouteMatch();
+  // console.log(param)
   useEffect(() => {
     const id = param.id;
    
@@ -21,7 +21,7 @@ const Movie = (props) => {
           console.error(error);
         });
 
-  },[props.id]);
+  },[param.id]);
   
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = evt => {
@@ -33,6 +33,7 @@ const Movie = (props) => {
 
   const { title, director, metascore, stars } = movie;
   return (
+    
     <div className="save-wrapper">
       <div className="movie-card">
         <h2>{title}</h2>
